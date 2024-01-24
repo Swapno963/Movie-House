@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'cart',
     'review',
     'rest_framework',
+    # for react
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +55,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # for react
+        'corsheaders.middleware.CorsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'ciname_backend.urls'
@@ -128,3 +133,14 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
+
+
+# for accessing from react app
+# settings.py
+
+
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # Replace with your React app's URL
+]
